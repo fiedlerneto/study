@@ -21,7 +21,7 @@ namespace Calc
         }
 
         public Calculadora(){
-            
+
         }
 
         // Método
@@ -42,7 +42,7 @@ namespace Calc
                     return Number1 / Number2;
                     break;
                 default:
-                    return 0;
+                    throw new InvalidOperationException("Erro: Operador inválido.");
                     break;
             }
 

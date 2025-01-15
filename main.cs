@@ -7,29 +7,33 @@ class Program
     static void Main(string[] args)
     {
 
-        int valor = 0;
-        int number1 = 0;
-        int number2 = 0;
-
         Calculadora calc = new Calculadora();
 
-
-        Console.WriteLine("Caculartor\r\n------------------------------");
-
-
-        Console.WriteLine("Digite o primeiro número: ");
-        calc.Number1 = int.Parse(Console.ReadLine());
+        try
+        {
+            Console.WriteLine("Caculartor\r\n------------------------------");
 
 
-        Console.WriteLine("Qual o operador vai digitar, operadores disponivels '+', '-', '*', '/': ");
-        calc.Operador = Console.ReadLine();
+            Console.WriteLine("Digite o primeiro número: ");
+            calc.Number1 = int.Parse(Console.ReadLine());
 
 
-        System.Console.WriteLine("Digite o segundo número para realizar o calculo: ");
-        calc.Number2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o operador vai digitar, operadores disponivels '+', '-', '*', '/': ");
+            calc.Operador = Console.ReadLine();
 
-        int resultado = calc.Calcular();
-        System.Console.WriteLine("O valor da conta é: " + resultado);
+
+            System.Console.WriteLine("Digite o segundo número para realizar o calculo: ");
+            calc.Number2 = int.Parse(Console.ReadLine());
+
+            int resultado = calc.Calcular();
+            System.Console.WriteLine("O valor da conta é: " + resultado);
+        }
+        catch (System.Exception)
+        {
+            Console.WriteLine("Erro: Você digitou um valor inválido. Por favor, insira números inteiros.");
+
+        }
+
 
 
         // string name = "";
