@@ -1,50 +1,35 @@
 ﻿using System;
 using System.Globalization;
+using Calc;
+
 class Program
 {
     static void Main(string[] args)
     {
 
+        int valor = 0;
         int number1 = 0;
         int number2 = 0;
-        int valor = 0;
-        string operador;
+
+        Calculadora calc = new Calculadora();
 
 
         Console.WriteLine("Caculartor\r\n------------------------------");
 
 
         Console.WriteLine("Digite o primeiro número: ");
-        number1 = int.Parse(Console.ReadLine());
+        calc.Number1 = int.Parse(Console.ReadLine());
 
 
         Console.WriteLine("Qual o operador vai digitar, operadores disponivels '+', '-', '*', '/': ");
-        operador = Console.ReadLine();
+        calc.Operador = Console.ReadLine();
 
 
         System.Console.WriteLine("Digite o segundo número para realizar o calculo: ");
-        number2 = int.Parse(Console.ReadLine());
+        calc.Number2 = int.Parse(Console.ReadLine());
 
-        switch (operador)
-        {
-            case "+":
-                valor = number1 + number2;
-                break;
-            case "-":
-                valor = number1 - number2;
-                break;
-            case "*":
-                valor = number1 * number2;
-                break;
-            case "/":
-                valor = number1 / number2;
-                break;
-            default:
-                break;
-        }
-
-        System.Console.WriteLine("O valor da conta é: " + valor);
-
+        int resultado = calc.Calcular();
+        System.Console.WriteLine("O valor da conta é: " + resultado);
 
 
         // string name = "";
